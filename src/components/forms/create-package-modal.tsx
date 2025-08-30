@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image' // Added for optimized images
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
 import { Badge } from '../ui/badge'
@@ -247,7 +248,14 @@ export default function CreatePackageModal({ isOpen, onClose, onSuccess }: Creat
                   onClick={() => handleDestinationSelect(destination)}
                 >
                   <div className="destination-image">
-                    <img src={destination.image} alt={destination.name} />
+                    {/* FIXED: Replaced <img> with <Image> */}
+                    <Image 
+                      src={destination.image} 
+                      alt={destination.name}
+                      width={400}
+                      height={300}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
                     {selectedDestination?.name === destination.name && (
                       <div className="selected-overlay">
                         <Check className="icon" />
@@ -377,14 +385,16 @@ export default function CreatePackageModal({ isOpen, onClose, onSuccess }: Creat
           <div className="step-content">
             <div className="step-header">
               <h3>Inclusions & Exclusions</h3>
-              <p>Define what's included and excluded in your package</p>
+              {/* FIXED: Escaped apostrophe */}
+              <p>Define what&apos;s included and excluded in your package</p>
             </div>
 
             <div className="inclusions-exclusions">
               <div className="inclusions-section">
                 <h4>
                   <Check className="icon" style={{ color: '#10b981' }} />
-                  What's Included
+                  {/* FIXED: Escaped apostrophe */}
+                  What&apos;s Included
                 </h4>
                 <div className="items-grid">
                   {sampleInclusions.map((inclusion, index) => (
@@ -416,7 +426,8 @@ export default function CreatePackageModal({ isOpen, onClose, onSuccess }: Creat
               <div className="exclusions-section">
                 <h4>
                   <X className="icon" style={{ color: '#ef4444' }} />
-                  What's Not Included
+                   {/* FIXED: Escaped apostrophe */}
+                  What&apos;s Not Included
                 </h4>
                 <div className="items-grid">
                   {sampleExclusions.map((exclusion, index) => (
@@ -504,7 +515,14 @@ export default function CreatePackageModal({ isOpen, onClose, onSuccess }: Creat
               <div className="preview-card">
                 {selectedDestination && (
                   <div className="preview-image">
-                    <img src={selectedDestination.image} alt={packageData.title} />
+                    {/* FIXED: Replaced <img> with <Image> */}
+                    <Image 
+                      src={selectedDestination.image} 
+                      alt={packageData.title}
+                      width={400}
+                      height={300}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
                     <div className="preview-badges">
                       <Badge className="category-badge">{packageData.category}</Badge>
                       <Badge className="rating-badge">
@@ -698,12 +716,8 @@ export default function CreatePackageModal({ isOpen, onClose, onSuccess }: Creat
           height: 150px;
           overflow: hidden;
         }
-
-        .destination-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+        
+        /* Note: styles for <img> tag are now handled by inline styles on <Image> component */
 
         .selected-overlay {
           position: absolute;
@@ -1060,12 +1074,8 @@ export default function CreatePackageModal({ isOpen, onClose, onSuccess }: Creat
           height: 200px;
           overflow: hidden;
         }
-
-        .preview-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+        
+        /* Note: styles for <img> tag are now handled by inline styles on <Image> component */
 
         .preview-badges {
           position: absolute;
