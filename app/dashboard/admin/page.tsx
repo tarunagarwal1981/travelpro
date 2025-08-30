@@ -668,7 +668,7 @@ export default function AdminDashboard() {
                     </h2>
                   </div>
                   <p style={{ fontSize: '1.125rem', opacity: 0.9, margin: 0 }}>
-                    Monitor and manage your travel platform's performance across
+                    Monitor and manage your travel platform&apos;s performance across
                     all metrics.
                   </p>
                 </div>
@@ -782,7 +782,7 @@ export default function AdminDashboard() {
                 <div className="chart-icon chart-icon-green">
                   <Shield className="icon" />
                 </div>
-                System Health & Performance
+                System Health &amp; Performance
               </h3>
               <div
                 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
@@ -1055,7 +1055,7 @@ export default function AdminDashboard() {
                   <div className="chart-icon chart-icon-purple">
                     <PieChart className="icon" />
                   </div>
-                  User Distribution & Growth
+                  User Distribution &amp; Growth
                 </h3>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                   <Badge
@@ -1148,7 +1148,7 @@ export default function AdminDashboard() {
                   <div className="chart-icon chart-icon-red">
                     <AlertTriangle className="icon" />
                   </div>
-                  Quick Actions & Alerts
+                  Quick Actions &amp; Alerts
                 </h3>
                 <Badge
                   className="badge"
@@ -1391,7 +1391,7 @@ export default function AdminDashboard() {
                 <div className="chart-icon chart-icon-purple">
                   <TrendingUp className="icon" />
                 </div>
-                Platform Insights & Performance Summary
+                Platform Insights &amp; Performance Summary
               </h3>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <Badge
